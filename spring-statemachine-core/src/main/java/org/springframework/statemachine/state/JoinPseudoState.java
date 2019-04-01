@@ -159,9 +159,10 @@ public class JoinPseudoState<S, E> extends AbstractPseudoState<S, E> {
 					State<S, E> next = iterator.next();
 					if (ids.contains(next.getId())) {
 						iterator.remove();
-						trackIter.remove();
 					}
 				}
+				if (iterator.isEmpty())
+					trackIter.remove();
 			}
 		}
 
